@@ -1,7 +1,8 @@
 import { Flight } from "./entity/Flight.ts";
 import { FlightStates } from "./entity/FlightStates.ts";
+import { Subject } from "./Subject.ts";
 
-export class FlightFeed {
+export class FlightFeed  extends Subject {
   private OPEN_SKY_BASE_URL = "https://opensky-network.org/api/states/all";
   // private OPEN_SKY_BASE_URL = "https://students.cs.byu.edu/~cs340ta/observer/index.php"
 
@@ -32,8 +33,9 @@ export class FlightFeed {
         } else {
           if (JSON.stringify(this._flight) !== JSON.stringify(newFlight)) {
             // Flight info changed
+            const oldFlight = this._flight;
             this.setFlight(newFlight);
-            console.log(this._flight);
+            this.updateObservers(newFlight, oldFlight)
           } 
         } 
       }
