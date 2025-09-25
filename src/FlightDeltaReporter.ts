@@ -1,5 +1,5 @@
-import { Flight } from "./entity/Flight";
-import { Observer } from "./Observer";
+import { Flight } from "./entity/Flight.ts";
+import { Observer } from "./Observer.ts";
 
 export class FlightDeltaReporter implements Observer {
    
