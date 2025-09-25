@@ -1,0 +1,16 @@
+{
+  "name": "observer-pattern-exercise",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.5"
+  }
+}
